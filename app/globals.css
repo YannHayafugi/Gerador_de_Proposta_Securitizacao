@@ -167,3 +167,55 @@ textarea {
 .msg.ok {
   color: #1f7a3d;
 }
+
+.item-analise {
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 14px;
+  background: #fafbfc;
+}
+
+.item-analise.item-ok {
+  background: #fff;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.item-analise-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.item-analise-resumo {
+  font-size: 13px;
+  color: #33383d;
+  margin: 0 0 12px;
+}
+
+.decisao-tag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.decisao-tag.decisao-pendente {
+  background: #fff3cd;
+  color: #7a5a00;
+}
+
+.decisao-tag.decisao-aceita {
+  background: #e6f4ea;
+  color: #1f7a3d;
+}
+
+.decisao-tag.decisao-recusada {
+  background: #f1f1f1;
+  color: #555;
+}
