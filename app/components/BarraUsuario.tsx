@@ -71,7 +71,7 @@ export default function BarraUsuario() {
         )}
       </nav>
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <span>{email}</span>
+        <Link href="/conta" style={linkStyle}>{email}</Link>
         <button
           onClick={sair}
           style={{
