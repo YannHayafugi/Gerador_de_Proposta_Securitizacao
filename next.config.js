@@ -10,6 +10,15 @@ const nextConfig = {
   // "ReferenceError: DOMMatrix is not defined".
   experimental: {
     serverComponentsExternalPackages: ["pdf-parse", "pdfjs-dist", "@napi-rs/canvas"],
+    // O pdfjs-dist carrega seu "worker" (pdf.worker.mjs) através de um
+    // import dinâmico com caminho calculado em tempo de execução — o
+    // rastreador de arquivos do Vercel não consegue detectar essa
+    // dependência sozinho e acaba deixando esse arquivo de fora do pacote
+    // implantado, quebrando com "Cannot find module ... pdf.worker.mjs".
+    // Força a inclusão explícita dele para a rota que faz a extração.
+    outputFileTracingIncludes: {
+      "/api/tr/analyze": ["./node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs"],
+    },
   },
 };
 
